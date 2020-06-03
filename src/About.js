@@ -1,5 +1,4 @@
 import React from 'react'
-
 export const About = () => (
     <div>
         <h2>About us</h2>
