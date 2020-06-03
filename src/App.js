@@ -7,10 +7,9 @@ import { Contact } from "./Contact";
 import { NoMatch } from "./NoMatch";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
-import { Jumbotron } from "./components/Jumbotron";
 import { Login } from "./Login"
 
-console.warn = () => {};
+console.warn = () => { };
 class App extends Component {
   render() {
     return (
@@ -23,7 +22,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
-              <Route path="/login" component={Login}/>
+              <Route path="/login" component={Login} />
               <Route component={NoMatch} />
             </Switch>
           </Layout>
