@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Login = () => (
         <div className="login-form">
-            <form action="/examples/actions/confirmation.php" method="post">
+            <form action="/login" method="post">
         <h2 className="text-center">Log in</h2>
         <div className="form-group">
             <input type="text" className="form-control" placeholder="Username" required="required"/>
