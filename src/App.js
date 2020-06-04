@@ -7,10 +7,17 @@ import { Contact } from "./Contact";
 import { NoMatch } from "./NoMatch";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
-import { Login } from "./Login"
+import { Login } from "./Login";
 
-console.warn = () => { };
+console.warn = () => {};
 class App extends Component {
+  state = { mess: "" };
+
+  componentDidMount() {
+    fetch("http://localhost:3306/")
+      .then((res) => res.text())
+      .then((data) => this.setState({ mess: data }));
+  }
   render() {
     return (
       //wrapper to not create a div
@@ -19,7 +26,9 @@ class App extends Component {
           <NavigationBar />
           <Layout>
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/">
+                <Home message={this.state.mess} />
+              </Route>
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/login" component={Login} />
