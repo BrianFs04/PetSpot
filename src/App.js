@@ -9,12 +9,12 @@ import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
 import { Login } from "./Login";
 
-console.warn = () => {};
+console.warn = () => { };
 class App extends Component {
   state = { mess: "" };
 
   componentDidMount() {
-    fetch("http://localhost:3306/")
+    fetch("http://localhost:1235/")
       .then((res) => res.text())
       .then((data) => this.setState({ mess: data }));
   }
