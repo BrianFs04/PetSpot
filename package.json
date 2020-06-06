@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lapi": "nodemon api/login_api.js",
     "api": "nodemon api/api.js",
     "dev": "parcel src/index.html",
     "format": "prettier \"src/**/*.{js,html}\" --write",
@@ -32,7 +33,10 @@
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4",
     "parcel-bundler": "^1.12.4",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "express-session": "^1.15.1",
+    "req-flash": "0.0.3",
+    "ejs": "^2.5.6"
   },
   "dependencies": {
     "@reach/router": "^1.3.3",

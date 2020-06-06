@@ -20,7 +20,7 @@ export const NavigationBar = () => (
           <Link className="item_pad" to="/contact">
             Contact Us
           </Link>
-          <Link className="item_pad" to="/about">
+          <Link className="item_pad" to="/signup">
             Sign up
           </Link>
           <Link className="item_pad" to="/login">
