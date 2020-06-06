@@ -9,6 +9,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.set("json spaces", 2);
 
 // Mysql
 const connection = mysql.createConnection({
@@ -25,21 +26,21 @@ app.get("/", (req, res) => {
 
 // All pets
 app.get("/pets", (req, res) => {
-  const sql = 'SELECT * FROM pets';
+  const sql = "SELECT * FROM pets";
 
   connection.query(sql, (error, result) => {
     if (error) throw error;
     if (result.length > 0) {
       res.json(result);
     } else {
-      res.send('Not results')
+      res.send("Not results");
     }
   });
 });
 
 // Single pet
 app.get("/pets/:id", (req, res) => {
-  const { id } = req.params
+  const { id } = req.params;
   const sql = `SELECT * FROM pets WHERE id = ${id}`;
 
   connection.query(sql, (error, result) => {
@@ -47,47 +48,47 @@ app.get("/pets/:id", (req, res) => {
     if (result.length > 0) {
       res.json(result);
     } else {
-      res.send('Not results')
+      res.send("Not results");
     }
   });
 });
 
 // Create new pet
-app.post('/add', (req, res) => {
-  const sql = 'INSERT INTO pets SET ?';
+app.post("/add", (req, res) => {
+  const sql = "INSERT INTO pets SET ?";
 
   const petObj = {
     name: req.body.name,
     breed: req.body.breed,
-    sex: req.body.sex
-  }
+    sex: req.body.sex,
+  };
 
-  connection.query(sql, petObj, error => {
+  connection.query(sql, petObj, (error) => {
     if (error) throw error;
-    res.send('Pet created!');
+    res.send("Pet created!");
   });
 });
 
 // Update pet info
-app.put('/update/:id', (req, res) => {
+app.put("/update/:id", (req, res) => {
   const { id } = req.params;
   const { name, breed, sex } = req.body;
   const sql = `UPDATE pets SET name='${name}', breed='${breed}', sex='${sex}' WHERE id=${id}`;
 
-  connection.query(sql, error => {
+  connection.query(sql, (error) => {
     if (error) throw error;
-    res.send('Pet updated!');
+    res.send("Pet updated!");
   });
 });
 
 // Delete pet
-app.delete('/delete/:id', (req, res) => {
+app.delete("/delete/:id", (req, res) => {
   const { id } = req.params;
   const sql = `DELETE FROM pets WHERE id=${id}`;
 
-  connection.query(sql, error => {
+  connection.query(sql, (error) => {
     if (error) throw error;
-    res.send('Pet deleted!');
+    res.send("Pet deleted!");
   });
 });
 
