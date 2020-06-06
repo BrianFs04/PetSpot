@@ -9,8 +9,9 @@ import { NoMatch } from "./NoMatch";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
 import { Login } from "./Login";
+import { Signup } from "./Signup";
 
-console.warn = () => {};
+console.warn = () => { };
 class App extends Component {
   render() {
     return (
@@ -26,6 +27,7 @@ class App extends Component {
               </Route>
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
+              <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route component={NoMatch} />
             </Switch>
