@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./Home";
 import { About } from "./About";
 import Details from "./Details";
-import { Contact } from "./Contact";
+import Contact from "./Contact";
 import { NoMatch } from "./NoMatch";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
 import { Login } from "./Login";
 import { Signup } from "./Signup";
 
-console.warn = () => { };
+console.warn = () => {};
 class App extends Component {
   render() {
     return (
