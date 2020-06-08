@@ -37,7 +37,7 @@ a,
 a:hover,
 .navbar-brand,
 .navbar-nav .nav-link {
-  color:black;
+  color: black;
   text-decoration: none;
   font-weight: bold;
 }
@@ -53,4 +53,18 @@ a:hover,
 }
 .item_pad {
   padding-right: 10px;
+}
+
+.image-container {
+  width: 240px;
+  height: 250px;
+}
+
+.sep {
+  padding-bottom: 50px;
+  padding-left: 70px;
+}
+
+.img_pet {
+  margin-top: 5px;
 }
