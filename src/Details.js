@@ -1,38 +1,43 @@
 import React, { Component } from "react";
+import Pet from "./Pet";
 
+const url = window.location.href;
+const urlSp = url.split("/");
+let id;
+if (urlSp.length === 5) {
+  id = url.split("/")[4];
+} else {
+  id = 0;
+}
 class Details extends Component {
-  state = { name: "" };
+  state = { pet: "" };
 
   componentDidMount() {
-    fetch("http://localhost:1235/pets")
+    fetch("http://localhost:1235/pets/" + id)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         const pet = data.map((pets) => {
           return (
-            <div key={pets.id}>
-              <h1>{pets.name}</h1>
-              <img
-                className="image-container"
-                src={pets.picture}
-                alt={pets.name}
-              ></img>
-            </div>
+            <Pet
+              key={pets.id}
+              id={pets.id}
+              name={pets.name}
+              breed={pets.breed}
+              sex={pets.sex}
+              description={pets.description}
+              picture={pets.picture}
+            />
           );
         });
-        this.setState({ name: pet });
+        this.setState({ pet: pet });
       });
   }
-
   render() {
-    const { name } = this.state;
-
-    return (
-      <div>
-        <h1>{name}</h1>
-      </div>
-    );
+    const { pet } = this.state;
+    return <div>{!pet ? <h1>Page not found</h1> : pet}</div>;
   }
 }
+
 export default Details;

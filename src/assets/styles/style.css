@@ -56,6 +56,15 @@ a:hover,
 }
 
 .image-container {
-  width: 300px;
-  height: 300px;
+  width: 240px;
+  height: 250px;
+}
+
+.sep {
+  padding-bottom: 50px;
+  padding-left: 70px;
+}
+
+.img_pet {
+  margin-top: 5px;
 }
