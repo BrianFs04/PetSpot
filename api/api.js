@@ -2,10 +2,12 @@ const express = require("express");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 
 const PORT = process.env.PORT || 1235;
 
 const app = express();
+var router = express.Router();
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -112,6 +114,48 @@ function handleDisconnect() {
   });
 }
 
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "petspoth@gmail.com",
+    pass: "c0dxc0dx",
+  },
+});
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take messages");
+  }
+});
+
+app.post("/send", (req, res, next) => {
+  var name = req.body.name;
+  var email = req.body.email;
+  var message = req.body.message;
+  var content = `name: ${name} \n email: ${email} \n message: ${message} `;
+
+  var mail = {
+    from: name,
+    to: email, //Change to email address that you want to receive messages on
+    subject: "New Message from Contact Form Holi",
+    text: content,
+  };
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: "fail",
+      });
+    } else {
+      res.json({
+        msg: "success",
+      });
+    }
+  });
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-exports.module = app;
+module.exports = app;
