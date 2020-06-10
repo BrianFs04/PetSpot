@@ -14,11 +14,11 @@ app.use(bodyParser.json());
 app.set("json spaces", 2);
 
 // Mysql
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "pet_api",
+const connection = mysql.createPool({
+  host: "database-1.c95hyumym0pz.us-east-1.rds.amazonaws.com",
+  user: "admin",
+  password: "Codx12.-",
+  database: "petspot_db",
 });
 
 // Routes
