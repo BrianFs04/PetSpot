@@ -12,7 +12,7 @@ export default function Pets({ id, name, description, picture }) {
           <Card.Text>{description}</Card.Text>
           <Link to={`/pet/${id}`}>
             <Button onClick variant="outline-dark">
-              Adopt me!
+              More about me
             </Button>
           </Link>
         </Card.Body>

@@ -14,11 +14,11 @@ app.use(bodyParser.json());
 app.set("json spaces", 2);
 
 // Mysql
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "pet_api",
+const connection = mysql.createPool({
+  host: "database-1.c95hyumym0pz.us-east-1.rds.amazonaws.com",
+  user: "admin",
+  password: "Codx12.-",
+  database: "petspot_db",
 });
 
 // Routes
@@ -29,6 +29,34 @@ app.get("/", (req, res) => {
 // All pets
 app.get("/pets", (req, res) => {
   const sql = "SELECT * FROM pets";
+
+  connection.query(sql, (error, result) => {
+    if (error) throw error;
+    if (result.length > 0) {
+      res.json(result);
+    } else {
+      res.send("Not results");
+    }
+  });
+});
+
+// All shelters
+app.get("/shelters", (req, res) => {
+  const sql = "SELECT * FROM shelters";
+
+  connection.query(sql, (error, result) => {
+    if (error) throw error;
+    if (result.length > 0) {
+      res.json(result);
+    } else {
+      res.send("Not results");
+    }
+  });
+});
+
+// Last three pets
+app.get("/lastpets", (req, res) => {
+  const sql = "SELECT * FROM pets ORDER BY id DESC LIMIT 3";
 
   connection.query(sql, (error, result) => {
     if (error) throw error;

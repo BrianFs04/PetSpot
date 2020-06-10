@@ -6,6 +6,7 @@ import { About } from "./About";
 import AllPets from "./AllPets";
 import Details from "./Details";
 import Contact from "./Contact";
+import AllShelters from "./AllShelters";
 import { NoMatch } from "./NoMatch";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
@@ -27,6 +28,9 @@ class App extends Component {
               </Route>
               <Route path="/pets">
                 <AllPets />
+              </Route>
+              <Route path="/shelters">
+                <AllShelters />
               </Route>
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
