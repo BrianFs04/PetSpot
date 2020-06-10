@@ -4,14 +4,22 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-var connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'password',
-        database: 'pet_api'
+
+const connection = mysql.createPool({
+        host: "database-1.c95hyumym0pz.us-east-1.rds.amazonaws.com",
+        user: "admin",
+        password: "Codx12.-",
+        database: "petspot_db",
 });
 
+
 var app = express();
+//app.set('views', __dirname + '/views');
+//app.set('view engine', 'jsx');
+//app.engine('jsx', require('express-react-views').createEngine());
+
+
+
 app.use(session({
         secret: 'secret',
         resave: true,
@@ -20,6 +28,8 @@ app.use(session({
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+
 
 
 app.post('/auth', function (request, response) {
@@ -46,7 +56,7 @@ app.post('/create', function (request, response) {
         const sql = 'INSERT INTO users SET ?';
         const userObj = {
                 username: request.body.username,
-                name: request.body.name,
+                firstname: request.body.name,
                 lastname: request.body.lastname,
                 email: request.body.email,
                 phone: request.body.phone,
@@ -70,5 +80,6 @@ app.get('/dashboard', function (request, response) {
         }
         response.end();
 });
+
 
 app.listen(3000);
