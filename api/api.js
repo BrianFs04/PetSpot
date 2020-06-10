@@ -28,7 +28,35 @@ app.get("/", (req, res) => {
 
 // All pets
 app.get("/pets", (req, res) => {
-  const sql = "SELECT * FROM pets";
+  const sql = "SELECT * FROM pets JOIN breeds ON pets.breed_id = breeds.id";
+
+  connection.query(sql, (error, result) => {
+    if (error) throw error;
+    if (result.length > 0) {
+      res.json(result);
+    } else {
+      res.send("Not results");
+    }
+  });
+});
+
+// All shelters
+app.get("/shelters", (req, res) => {
+  const sql = "SELECT * FROM shelters";
+
+  connection.query(sql, (error, result) => {
+    if (error) throw error;
+    if (result.length > 0) {
+      res.json(result);
+    } else {
+      res.send("Not results");
+    }
+  });
+});
+
+// Last three pets
+app.get("/lastpets", (req, res) => {
+  const sql = "SELECT * FROM pets ORDER BY id DESC LIMIT 3";
 
   connection.query(sql, (error, result) => {
     if (error) throw error;
@@ -43,7 +71,7 @@ app.get("/pets", (req, res) => {
 // Single pet
 app.get("/pets/:id", (req, res) => {
   const { id } = req.params;
-  const sql = `SELECT * FROM pets WHERE id = ${id}`;
+  const sql = `SELECT * FROM pets JOIN breeds ON pets.breed_id = breeds.id JOIN sex ON pets.sex_id = sex.id WHERE pets.id = ${id}`;
 
   connection.query(sql, (error, result) => {
     if (error) throw error;

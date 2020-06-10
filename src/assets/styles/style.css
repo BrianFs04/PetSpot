@@ -1,3 +1,7 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
   max-width: 1100px;
   overflow-x: hidden;
@@ -65,6 +69,14 @@ a:hover,
   padding-left: 70px;
 }
 
-.img_pet {
-  margin-top: 5px;
+.sep_shelters {
+  padding: 0 20px 50px 30px;
+}
+
+.img_shelter {
+  opacity: 0.6;
+}
+
+.navbar_sep {
+  padding-bottom: 50px;
 }
