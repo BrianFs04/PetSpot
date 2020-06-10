@@ -24,7 +24,7 @@ class Details extends Component {
               key={pets.id}
               id={pets.id}
               name={pets.name}
-              breed={pets.breed}
+              breed={pets.breed_name}
               sex={pets.sex}
               description={pets.description}
               picture={pets.picture}
