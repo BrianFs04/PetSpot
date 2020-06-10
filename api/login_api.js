@@ -3,6 +3,9 @@ var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
+const bcrypt = require('bcrypt');
+
+const bcryptSalt = 10;
 
 
 const connection = mysql.createPool({
@@ -60,7 +63,7 @@ app.post('/create', function (request, response) {
                 lastname: request.body.lastname,
                 email: request.body.email,
                 phone: request.body.phone,
-                password: request.body.password
+                password: bcrypt.hashSync(request.body.password, bcrypt.genSaltSync(bcryptSalt))
         }
 
         connection.query(sql, userObj, error => {
