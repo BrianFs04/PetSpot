@@ -1,3 +1,7 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
   max-width: 1100px;
   overflow-x: hidden;
