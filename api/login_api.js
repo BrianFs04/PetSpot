@@ -3,6 +3,9 @@ var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
+const bcrypt = require('bcrypt');
+
+const bcryptSalt = 10;
 
 
 const connection = mysql.createPool({
@@ -36,8 +39,10 @@ app.post('/auth', function (request, response) {
         var username = request.body.username;
         var password = request.body.password;
         if (username && password) {
-                connection.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], function (error, results, fields) {
-                        if (results.length > 0) {
+                connection.query('SELECT * FROM users WHERE username = ?', [username], function (error, results, fields) {
+                       console.log(results[0].password)
+                       console.log(bcrypt.compareSync(password, (results[0].password)))
+                        if (results.length > 0 && bcrypt.compareSync(password, (results[0].password))) {
                                 request.session.loggedin = true;
                                 request.session.username = username;
                                 response.redirect('/dashboard');
@@ -60,7 +65,7 @@ app.post('/create', function (request, response) {
                 lastname: request.body.lastname,
                 email: request.body.email,
                 phone: request.body.phone,
-                password: request.body.password
+                password: bcrypt.hashSync(request.body.password, bcrypt.genSaltSync(bcryptSalt))
         }
 
         connection.query(sql, userObj, error => {
