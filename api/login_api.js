@@ -39,8 +39,10 @@ app.post('/auth', function (request, response) {
         var username = request.body.username;
         var password = request.body.password;
         if (username && password) {
-                connection.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], function (error, results, fields) {
-                        if (results.length > 0) {
+                connection.query('SELECT * FROM users WHERE username = ?', [username], function (error, results, fields) {
+                       console.log(results[0].password)
+                       console.log(bcrypt.compareSync(password, (results[0].password)))
+                        if (results.length > 0 && bcrypt.compareSync(password, (results[0].password))) {
                                 request.session.loggedin = true;
                                 request.session.username = username;
                                 response.redirect('/dashboard');
