@@ -12,8 +12,6 @@ import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
 import { Login } from "./Login";
 import { Signup } from "./Signup";
-import { Dashborad, Dashboard } from "./Dashboard";
-import {ProtectedRoute} from "./protectedRoute";
 
 console.warn = () => {};
 class App extends Component {
@@ -38,7 +36,6 @@ class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
-              <ProtectedRoute path="/dashboard" component={Dashboard}/>
               <Route component={Details} />
               <Route component={NoMatch} />
             </Switch>
