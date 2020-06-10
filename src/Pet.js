@@ -3,9 +3,7 @@ import { Container, Col, Image, Row } from "react-bootstrap";
 
 export default function Pet({ name, breed, sex, description, picture }) {
   return (
-    <Container className="img_pet">
-      <br />
-      <br />
+    <Container>
       <Row>
         <Col xs={12} sm={7} md={6} lg={4}>
           <Image src={picture} roundedCircle fluid />
