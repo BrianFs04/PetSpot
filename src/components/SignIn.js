@@ -1,6 +1,8 @@
 import React from 'react'
+import auth from '../auth'
 
-export const Login = () => (
+
+export const Login = (props) => (
     <div className="login-form">
         <form action="http://localhost:3000/auth" method="POST">
             <h2 className="text-center">Log in</h2>
@@ -15,5 +17,13 @@ export const Login = () => (
             </div>
         </form>
         <p className="text-center"><a href="/signup">Create an Account</a></p>
+        <button onClick={
+            () => {
+                auth.login(() => {
+                    props.history.push("/dashboard");
+                })
+            }
+        }
+        >Login</button>
     </div>
 )

@@ -2,8 +2,6 @@ var mysql = require('mysql');
 var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
-var path = require('path');
-
 
 const connection = mysql.createPool({
         host: "database-1.c95hyumym0pz.us-east-1.rds.amazonaws.com",
@@ -14,9 +12,8 @@ const connection = mysql.createPool({
 
 
 var app = express();
-//app.set('views', __dirname + '/views');
-//app.set('view engine', 'jsx');
-//app.engine('jsx', require('express-react-views').createEngine());
+app.set('views', __dirname + '/views');
+app.set('view-engine', 'jsx');
 
 
 
@@ -71,10 +68,13 @@ app.post('/create', function (request, response) {
 
 });
 
+
 app.get('/dashboard', function (request, response) {
         if (request.session.loggedin) {
-                var welcome = `<h1>Welcome back ${request.session.username} !</h1>`
-                response.send(welcome);
+                name = request.session.username;
+                response.render('index.js')
+                //var welcome = `<h1>Welcome back ${request.session.username} !</h1>`
+                //response.send(welcome);
         } else {
                 response.send('Please login to view this page!');
         }
