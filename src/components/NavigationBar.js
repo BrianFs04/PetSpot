@@ -27,7 +27,7 @@ export const NavigationBar = () => (
             Contact Us
           </Link>
           <Link className="item_pad" to="/signup">
-            Sign up
+            Signup
           </Link>
           <Link className="item_pad" to="/login">
             Login

@@ -10,10 +10,10 @@ import AllShelters from "./AllShelters";
 import { NoMatch } from "./NoMatch";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
-import { Login } from "./Login";
-import { Signup } from "./Signup";
+import { Login } from "./views/auth/login";
+import { Signup } from "./views/auth/signup";
 
-console.warn = () => {};
+console.warn = () => { };
 class App extends Component {
   render() {
     return (
@@ -34,8 +34,8 @@ class App extends Component {
               </Route>
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
-              <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
               <Route component={Details} />
               <Route component={NoMatch} />
             </Switch>
