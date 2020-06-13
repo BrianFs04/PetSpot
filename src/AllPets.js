@@ -1,18 +1,69 @@
-import React, { Component } from "react";
-import { CardDeck } from "react-bootstrap";
+import React, { Component, useEffect, useState } from "react";
+import {
+  CardDeck,
+  FormControl,
+  Dropdown,
+  InputGroup,
+  DropdownButton,
+} from "react-bootstrap";
+import axios from "axios";
 import Pets from "./Pets";
 
-class AllPets extends Component {
-  state = { pets: "" };
+function Search() {
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState([]);
+  const [breed, setBreed] = useState("");
 
-  componentDidMount() {
-    fetch("http://localhost:1235/pets")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        const pets = data.map((pets) => {
-          return (
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("http://localhost:1235/pets");
+        setData(res.data);
+        setSearch(res.data);
+      } catch (err) {
+        throw new Error(err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const breedsRes = search.filter((pets) =>
+      pets.breed_name.toLowerCase().includes(breed)
+    );
+    setData(breedsRes);
+  }, [search, breed]);
+
+  return (
+    <div>
+      <InputGroup
+        className="mb-3"
+        value={breed}
+        onChange={(e) => setBreed(e.target.value)}
+      >
+        <DropdownButton
+          as={InputGroup.Prepend}
+          variant="outline-secondary"
+          title="See our available breeds"
+          id="input-group-dropdown-1"
+        >
+          {data.map((pets) => (
+            <Dropdown.Item disabled key={pets.id}>
+              {pets.breed_name}
+            </Dropdown.Item>
+          ))}
+        </DropdownButton>
+        <FormControl
+          placeholder="Type the breed in lower case in accordance with the list on the left"
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+        />
+      </InputGroup>
+      {data.length === 0 ? (
+        <h1>No results</h1>
+      ) : (
+        <CardDeck>
+          {data.map((pets) => (
             <Pets
               key={pets.id}
               id={pets.id}
@@ -20,16 +71,19 @@ class AllPets extends Component {
               description={pets.description}
               picture={pets.picture}
             />
-          );
-        });
-        this.setState({ pets: pets });
-      });
-  }
-
+          ))}
+        </CardDeck>
+      )}
+    </div>
+  );
+}
+class AllPets extends Component {
   render() {
-    const { pets } = this.state;
-
-    return <CardDeck>{pets}</CardDeck>;
+    return (
+      <div>
+        <Search />
+      </div>
+    );
   }
 }
 export default AllPets;
