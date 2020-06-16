@@ -13,6 +13,7 @@ function Search() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState([]);
   const [breed, setBreed] = useState("");
+  const [typeBreed, setTypeBreed] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,6 +26,18 @@ function Search() {
       }
     };
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchUniq = async () => {
+      try {
+        const res = await axios.get("http://localhost:1235/breeds");
+        setTypeBreed(res.data);
+      } catch (err) {
+        throw new Error(err);
+      }
+    };
+    fetchUniq();
   }, []);
 
   useEffect(() => {
@@ -47,14 +60,14 @@ function Search() {
           title="See our available breeds"
           id="input-group-dropdown-1"
         >
-          {data.map((pets) => (
+          {typeBreed.map((pets) => (
             <Dropdown.Item disabled key={pets.id}>
-              {pets.breed_name}
+              {pets.animal_type} - {pets.breed_name}
             </Dropdown.Item>
           ))}
         </DropdownButton>
         <FormControl
-          placeholder="Type the breed in lower case in accordance with the list on the left"
+          placeholder="Type the breed in lower case in accordance with the list on the left ex: shih tzu"
           aria-label="Default"
           aria-describedby="inputGroup-sizing-default"
         />
