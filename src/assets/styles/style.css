@@ -149,4 +149,18 @@ header .overlay {
   width: 240px;
   height: 250px;
   box-shadow: 2px 2px 10px #666;
+
+.img_car {
+  min-width: 2000;
+  height: 200;
+}
+
+.paws {
+  background: url("../images/Huellas.png") no-repeat;
+  background-size: 400px;
+  background-position-x: right;
+  background-position-y: center;
+  color: #343339;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
 }
