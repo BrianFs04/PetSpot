@@ -3,7 +3,7 @@ import { Jumbotron } from "./components/Jumbotron";
 import LastPets from "./LastPets";
 export const Home = () => (
   <div>
-    <Jumbotron />
+    {/* <Jumbotron /> */}
     <br />
     <LastPets />
   </div>
