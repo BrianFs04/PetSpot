@@ -12,7 +12,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   /*background: linear-gradient(#bdc3c7 0%, #2c3e50 100%);*/
   /*background: linear-gradient(#bdc3c7 0%, #ffffff 30%);*/
-  background: linear-gradient(#5f2c82 0%, #49a09d 30%);
+  background: linear-gradient(#fcfdff 0%, #bdc3c7 100%);
 }
 .jumbo {
   background: radial-gradient(white 0%, #43c6ac 50%);
@@ -46,8 +46,8 @@ and is manual placed*/
   -webkit-filter: grayscale(80%);
   padding-bottom: -10px;
   margin-top: -100px;
-  width: 1400px;
-  margin-left: -50px;
+  width: 1300px;
+  margin-left: 0px;
 }
 
 /* Style definiton of the menu options in the navbar */
@@ -149,6 +149,7 @@ header .overlay {
   width: 240px;
   height: 250px;
   box-shadow: 2px 2px 10px #666;
+}
 
 .img_car {
   min-width: 2000;
@@ -163,4 +164,9 @@ header .overlay {
   color: #343339;
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
+}
+
+
+#root {
+  margin-top: -10px;
 }
