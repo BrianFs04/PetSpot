@@ -42,6 +42,7 @@ body {
 #site-content {
   background-size: contain;
   background-position: center;
+  margin-top: -30px;
 }
 
 #site-footer {
