@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 // All pets
 app.get("/pets", (req, res) => {
   const sql =
-    "SELECT pets.*, breeds.breed_name FROM pets JOIN breeds ON pets.breed_id = breeds.id ORDER BY pets.id;";
+    "SELECT pets.*, breeds.breed_name, type.animal_type FROM pets JOIN breeds ON pets.breed_id = breeds.id JOIN type ON pets.type_id = type.id ORDER BY pets.id;";
 
   connection.query(sql, (error, result) => {
     if (error) throw error;
