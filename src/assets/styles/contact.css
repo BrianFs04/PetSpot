@@ -1,0 +1,26 @@
+.message {
+  background: url("../images/contact_message.png") no-repeat;
+  width: 1658px;
+  background-size: 400px;
+  background-position-y: -15px;
+  background-position-x: 80px;
+}
+
+.cat_message {
+  background: url("../images/cat_message.gif") no-repeat;
+  background-size: 378px;
+  height: 520px;
+  background-position-y: 123px;
+  background-position-x: 93px;
+}
+
+.btn_col {
+  background-color: #c97b11;
+  color: white;
+  margin-left: 445px;
+  margin-top: 30px;
+}
+
+.move_form {
+  margin-top: 30px;
+}

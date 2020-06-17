@@ -29,9 +29,9 @@ class AllShelters extends Component {
             <Shelters
               key={shelters.id}
               id={shelters.id}
-              name={shelters.name}
+              name={shelters.shelter_name}
               description={shelters.description}
-              picture={shelters.picture}
+              picture={shelters.shelter_picture}
             />
           );
         });
