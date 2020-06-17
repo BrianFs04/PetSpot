@@ -7,7 +7,7 @@ export default function Pets({ id, name, description, picture }) {
     <div className="sep">
       <Card>
         <Card.Img className="image-container" variant="top" src={picture} />
-        <Card.Body>
+        <Card.Body className="custom-card">
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
           <Link to={`/pet/${id}`}>

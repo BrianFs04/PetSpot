@@ -1,23 +1,14 @@
-html {
-  position: relative;
-  min-height: 100%;
-}
+/*The body contains all component react objects
+and some stylish backgrond*/
 body {
   max-width: 1100px;
   overflow-x: hidden;
   margin: 0 auto;
   padding: 20px 0px 0px 0px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(#fcfdff 0%, #bdc3c7 100%);
 }
-.jumbo {
-  background: url("../images/screen.jpg") no-repeat fixed bottom;
-  background-size: cover;
-  color: #efefef;
-  height: 200px;
-  position: relative;
-  z-index: -2;
-  opacity: 0.7;
-}
+
 .overlay {
   background-color: #000;
   opacity: 0.6;
@@ -28,16 +19,33 @@ body {
   right: 0;
   z-index: -1;
 }
+/*This section contains navbar styles, in the next style
+the navbar is used as a decorative central object
+and is manual placed*/
 .navbar {
-  background-color: white;
+  background: url("../images/screen.jpg") no-repeat fixed;
+  background-position-x: -200%;
+  background-position-y: -170%;
+  background-size: 1100px;
+  opacity: 0.7;
   text-align: right;
+  border-radius: 0 0 85% 85% / 30%;
+  height: 350px;
+  -webkit-filter: grayscale(80%);
+  padding-bottom: -10px;
+  margin-top: -100px;
+  width: 1300px;
 }
+
+/* Style definiton of the menu options in the navbar */
 a,
 .navbar-brand,
 .navbar-nav .nav-link {
-  color: black;
+  color: #343339;
   text-decoration: none;
+  font-size: 18px;
 }
+
 a:hover,
 .navbar-brand,
 .navbar-nav .nav-link {
@@ -45,15 +53,27 @@ a:hover,
   text-decoration: none;
   font-weight: bold;
 }
+.navbar-collapse {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 50px;
+}
+
 .logo {
   display: inline-block;
   background-image: url("../images/petspot.png");
   background-repeat: no-repeat;
   background-size: 300px;
+
   width: 300px;
   height: 60px;
   overflow: hidden;
   text-indent: -9999px;
+  margin-left: 150px;
 }
 .item_pad {
   padding-right: 10px;
@@ -79,4 +99,38 @@ a:hover,
 
 .navbar_sep {
   padding-bottom: 50px;
+}
+
+/* This style is for the animals cards used */
+.custom-card {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+  box-shadow: 2px 2px 10px #666;
+}
+
+.image-container {
+  width: 240px;
+  height: 250px;
+  box-shadow: 2px 2px 10px #666;
+}
+
+.img_car {
+  min-width: 2000;
+  height: 200;
+}
+
+.paws {
+  background: url("../images/Huellas.png") no-repeat;
+  background-size: 400px;
+  background-position-x: right;
+  background-position-y: center;
+  color: #343339;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+}
+
+#root {
+  margin-top: -10px;
 }

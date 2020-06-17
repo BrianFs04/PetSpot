@@ -13,7 +13,7 @@ import { NavigationBar } from "./components/NavigationBar";
 import { Login } from "./views/auth/login";
 import { Signup } from "./views/auth/signup";
 
-console.warn = () => { };
+console.warn = () => {};
 class App extends Component {
   render() {
     return (

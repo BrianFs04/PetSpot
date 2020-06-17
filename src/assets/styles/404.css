@@ -1,0 +1,27 @@
+.fourofour {
+  background: url(../images/cat.gif) no-repeat;
+  background-position: center;
+  background-size: 200px;
+  width: 1100px;
+  height: 180px;
+}
+
+.numberleft {
+  background: url(../images/four.png) no-repeat;
+  background-size: 114px;
+  display: flex;
+  width: 9%;
+  height: 26%;
+  position: absolute;
+  margin: 20px auto auto 340px;
+}
+
+.numberright {
+  background: url(../images/four.png) no-repeat;
+  background-size: 114px;
+  display: flex;
+  width: 9%;
+  height: 26%;
+  position: absolute;
+  margin: -160px auto auto 655px;
+}

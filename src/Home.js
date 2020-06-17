@@ -1,9 +1,11 @@
 import React from "react";
-import { Jumbotron } from "./components/Jumbotron";
 import LastPets from "./LastPets";
 export const Home = () => (
   <div>
-    <Jumbotron />
+    <h3>
+      {" "}
+      <span>Recently added pets</span>
+    </h3>
     <br />
     <LastPets />
   </div>

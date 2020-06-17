@@ -45,7 +45,8 @@ app.get("/", (req, res) => {
 
 // All pets
 app.get("/pets", (req, res) => {
-  const sql = "SELECT * FROM pets JOIN breeds ON pets.breed_id = breeds.id";
+  const sql =
+    "SELECT pets.*, breeds.breed_name, type.animal_type FROM pets JOIN breeds ON pets.breed_id = breeds.id JOIN type ON pets.type_id = type.id ORDER BY pets.id;";
 
   connection.query(sql, (error, result) => {
     if (error) throw error;
@@ -71,10 +72,24 @@ app.get("/shelters", (req, res) => {
   });
 });
 
+// All breeds
+app.get("/breeds", (req, res) => {
+  const sql =
+    "SELECT * FROM breeds JOIN type ON breeds.type_id = type.id ORDER BY type.id";
+
+  connection.query(sql, (error, result) => {
+    if (error) throw error;
+    if (result.length > 0) {
+      res.json(result);
+    } else {
+      res.send("Not results");
+    }
+  });
+});
+
 // Last three pets
 app.get("/lastpets", (req, res) => {
   const sql = "SELECT * FROM pets ORDER BY id DESC LIMIT 3";
-
   connection.query(sql, (error, result) => {
     if (error) throw error;
     if (result.length > 0) {
@@ -88,12 +103,30 @@ app.get("/lastpets", (req, res) => {
 // Single pet
 app.get("/pets/:id", (req, res) => {
   const { id } = req.params;
-  const sql = `SELECT * FROM pets JOIN breeds ON pets.breed_id = breeds.id JOIN sex ON pets.sex_id = sex.id WHERE pets.id = ${id}`;
+  const sql = `SELECT * FROM pets JOIN breeds ON pets.breed_id = breeds.id WHERE pets.id = ${id}`;
 
   connection.query(sql, (error, result) => {
     if (error) throw error;
     if (result.length > 0) {
       res.json(result);
+    } else {
+      res.send("Not results");
+    }
+  });
+});
+
+// Pictures
+app.get("/pictures/:id", (req, res) => {
+  const { id } = req.params;
+  const sql = `SELECT * FROM pictures JOIN pets ON pets.id = pictures.pet_id WHERE pets.id = ${id}`;
+  connection.query(sql, (error, result) => {
+    let pic = [];
+    if (error) throw error;
+    if (result.length > 0) {
+      for (let i in result) {
+        pic.push(result[i].pictures);
+      }
+      res.json([{ pictures: pic }]);
     } else {
       res.send("Not results");
     }
