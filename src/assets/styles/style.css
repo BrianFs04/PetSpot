@@ -131,6 +131,10 @@ a:hover,
   font-size: 40px;
 }
 
+.pad_bot {
+  padding-bottom: 25px;
+}
+
 #root {
   margin-top: -10px;
 }

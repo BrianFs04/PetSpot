@@ -12,9 +12,11 @@ var router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 app.set("json spaces", 2);
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
 // Mysql
 const connection = mysql.createPool({
@@ -24,19 +26,15 @@ const connection = mysql.createPool({
   database: "petspot_db",
 });
 
-
-app.post('/update', (req, res) => {
-  console.log(req.body)
+app.post("/update", (req, res) => {
+  console.log(req.body);
   const { id } = req.body;
   const { username, firstname, lastname, email, phone } = req.body;
   const sql = `UPDATE users SET username='${username}', firstname='${firstname}', lastname='${lastname}', email='${email}', phone='${phone}' WHERE id=${id}`;
   connection.query(sql, (error) => {
-    res.redirect('http://localhost:4000/profile');
+    res.redirect("http://localhost:4000/profile");
   });
-})
-
-
-
+});
 
 // Routes
 app.get("/", (req, res) => {
@@ -146,14 +144,13 @@ app.post("/add", (req, res) => {
     sex: req.body.sex,
     picture: req.body.picture,
     description: req.body.description,
-    shelter_id: req.body.shelter_id
+    shelter_id: req.body.shelter_id,
   };
 
   connection.query(sql, petObj, (error) => {
     if (error) throw error;
-    res.send("Pet created!");
+    res.redirect("http://localhost:1234/");
   });
-
 });
 
 // Update pet info
