@@ -1,7 +1,3 @@
-html {
-  position: relative;
-  min-height: 100%;
-}
 /*The body contains all component react objects
 and some stylish backgrond*/
 body {
@@ -10,18 +6,7 @@ body {
   margin: 0 auto;
   padding: 20px 0px 0px 0px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  /*background: linear-gradient(#bdc3c7 0%, #2c3e50 100%);*/
-  /*background: linear-gradient(#bdc3c7 0%, #ffffff 30%);*/
   background: linear-gradient(#fcfdff 0%, #bdc3c7 100%);
-}
-.jumbo {
-  background: radial-gradient(white 0%, #43c6ac 50%);
-  background-size: cover;
-  color: #efefef;
-  height: 20px;
-  position: relative;
-  z-index: -2;
-  text-align: center;
 }
 
 .overlay {
@@ -35,10 +20,13 @@ body {
   z-index: -1;
 }
 /*This section contains navbar styles, in the next style
-the navbar is used as a decorative central object 
+the navbar is used as a decorative central object
 and is manual placed*/
 .navbar {
-  background: url("../images/screen.jpg") no-repeat fixed bottom;
+  background: url("../images/screen.jpg") no-repeat fixed;
+  background-position-x: -200%;
+  background-position-y: -170%;
+  background-size: 1100px;
   opacity: 0.7;
   text-align: right;
   border-radius: 0 0 85% 85% / 30%;
@@ -47,23 +35,21 @@ and is manual placed*/
   padding-bottom: -10px;
   margin-top: -100px;
   width: 1300px;
-  margin-left: 0px;
 }
 
 /* Style definiton of the menu options in the navbar */
 a,
 .navbar-brand,
 .navbar-nav .nav-link {
-  color: black;
+  color: #343339;
   text-decoration: none;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 18px;
 }
 
 a:hover,
 .navbar-brand,
 .navbar-nav .nav-link {
-  color: white;
+  color: black;
   text-decoration: none;
   font-weight: bold;
 }
@@ -74,7 +60,7 @@ a:hover,
   flex-grow: 1;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 200px;
+  padding-right: 50px;
 }
 
 .logo {
@@ -115,29 +101,8 @@ a:hover,
   padding-bottom: 50px;
 }
 
-/*Form of the navbar in the header*/
-header {
-  background: url("http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg");
-  text-align: center;
-  width: 100%;
-  height: auto;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0 0 85% 85% / 30%;
-}
-header .overlay {
-  width: 100%;
-  height: 100%;
-  padding: 50px;
-  color: #fff;
-  text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient(135deg, #9f05ff69 10%, #fd5e086b 100%);
-}
-
-/* This style is for the animals cars used */
-.card-body {
+/* This style is for the animals cards used */
+.custom-card {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
@@ -165,7 +130,6 @@ header .overlay {
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
 }
-
 
 #root {
   margin-top: -10px;

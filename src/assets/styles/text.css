@@ -1,0 +1,13 @@
+h3 {
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+h3 span {
+  display: block;
+  margin: 11px 0 17px 0;
+  font-size: 50px;
+  line-height: 80px;
+  color: grey;
+}

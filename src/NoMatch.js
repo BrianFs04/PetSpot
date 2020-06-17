@@ -1,7 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export const NoMatch = () => (
-    <div>
-        <h2>Page not found</h2>
-    </div>
-)
+  <div>
+    <div className="numberleft"></div>
+    <div className="fourofour"></div>
+    <div className="numberright"></div>
+  </div>
+);

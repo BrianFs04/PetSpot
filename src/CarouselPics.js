@@ -9,7 +9,7 @@ if (urlSp.length === 5) {
 } else {
   id = 0;
 }
-class Pictures extends Component {
+class CarouselPics extends Component {
   state = { pictures: [] };
 
   componentDidMount() {
@@ -54,4 +54,4 @@ class Pictures extends Component {
     return <div>{pictures}</div>;
   }
 }
-export default Pictures;
+export default CarouselPics;
