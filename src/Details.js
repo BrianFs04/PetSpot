@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NoMatch } from "./NoMatch";
 import Pet from "./Pet";
 
 const url = window.location.href;
@@ -36,7 +37,7 @@ class Details extends Component {
   }
   render() {
     const { pet } = this.state;
-    return <div>{!pet ? <h1>Page not found</h1> : pet}</div>;
+    return <div>{!pet ? <NoMatch /> : pet}</div>;
   }
 }
 

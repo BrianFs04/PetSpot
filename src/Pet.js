@@ -1,11 +1,11 @@
 import React from "react";
-import Pictures from "./Pictures";
+import CarouselPics from "./CarouselPics";
 import { Container, Col, Image, Row, Card } from "react-bootstrap";
 
 export default function Pet({ name, breed, sex, description, picture }) {
   return (
     <div>
-      <Pictures />
+      <CarouselPics />
       <br />
       <br />
       <br />
@@ -15,7 +15,11 @@ export default function Pet({ name, breed, sex, description, picture }) {
             <Image src={picture} roundedCircle fluid />
           </Col>
           <Col xs={12} sm={7} md={6} lg={8}>
-            <Card border="light" style={{ width: "42rem" }}>
+            <Card
+              className="custom-card"
+              border="light"
+              style={{ width: "42rem" }}
+            >
               <Card.Header className="paws">{name}</Card.Header>
               <Card.Body>
                 <Card.Title>
