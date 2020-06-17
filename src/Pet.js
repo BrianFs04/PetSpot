@@ -4,12 +4,9 @@ import { Container, Col, Image, Row, Card } from "react-bootstrap";
 
 export default function Pet({ name, breed, sex, description, picture }) {
   return (
-    <div>
-      <CarouselPics />
-      <br />
-      <br />
-      <br />
-      <Container>
+    <div className="pad_bot">
+      <CarouselPics className="pad_bot" />
+      <Container className="pad_top">
         <Row>
           <Col xs={12} sm={7} md={6} lg={4}>
             <Image src={picture} roundedCircle fluid />

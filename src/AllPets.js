@@ -62,7 +62,7 @@ function BreedsDropDown() {
   });
   return (
     <div>
-      <Form>
+      <Form className="pad_bot">
         <Form.Group controlId="exampleForm.SelectCustom">
           <Form.Label column="lg">Select a breed</Form.Label>
           <Form.Control
