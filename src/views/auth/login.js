@@ -1,10 +1,9 @@
 import React from 'react'
 
-
-export const Login = (props) => (
+export const Login = () => (
         <div className="login-form">
                 <form action="http://localhost:4000/signin" method="POST">
-                        <h2 className="text-center">Log in now</h2>
+                        <h2 className="text-center">Log in</h2>
                         <div className="form-group">
                                 <input type="text" name="username" className="form-control" placeholder="Username" required="required" />
                         </div>

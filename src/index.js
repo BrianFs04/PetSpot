@@ -15,6 +15,7 @@ require('./passport');
 //settings
 app.set('port', process.env.PORT || 4000);
 app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.engine('.hbs', exphbs({
         defaultLayout: 'main',
         layoutsDir: path.join(app.get('views'), 'layouts'),
