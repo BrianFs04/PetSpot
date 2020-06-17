@@ -135,6 +135,10 @@ a:hover,
   padding-bottom: 25px;
 }
 
+.pad_top {
+  padding-top: 35px;
+}
+
 #root {
   margin-top: -10px;
 }
