@@ -1,0 +1,20 @@
+.margin_text {
+  position: absolute;
+  margin-left: 397px;
+}
+
+.intro {
+  min-width: 137%;
+  margin-left: 180px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  color: #3a2f5e;
+}
+
+.other {
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  color: #3a2f5e;
+}
