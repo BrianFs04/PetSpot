@@ -1,118 +1,116 @@
-<div class="welcome">
-        <h1>Welcome {{user.firstname}} {{user.lastname}}</h1>
-</div>
-<div class="containter p-4">
-        <div class="row">
-                <div class="col-sm mx-auto">
-                        <div class="card text-center">
-                                <div class="card-body">
-                                        <img src="https://i.ibb.co/4fXdmJy/User.png" alt="user-icon"
-                                                class="card-img-top mx-auto m-2  w-25">
-                                        <h2>Profile information</h2>
-                                        <h3>Username: {{user.username}}</h3>
-                                        <h3>Name: {{user.firstname}} {{user.lastname}}</h3>
-                                        <h3>Email: {{user.email}}</h3>
-                                        <h3>Phone: {{user.phone}}</h3>
-                                </div>
-                                <form action="/logout" method="post">
-                                        <input type="submit" name="logout" value="Logout" />
-                                </form>
-                                <br />
-                        </div>
-                </div>
-                <div class="col-sm mx-auto">
-                        <div class="card text-center">
-                                <div class="card-body">
-                                        <img src="https://i.ibb.co/tbrK4hb/Update.png" alt="peticon"
-                                                class="card-img-top mx-auto m-2 w-25">
-                                        <h3>Update information</h3>
-                                        <br />
-                                        <form action="http://localhost:1235/update" method="POST">
-                                                <div class="form-group">
-                                                        <input type="hidden" value="{{user.id}}" name="id" />
-                                                        <input type="text" name="username" class="form-control"
-                                                                placeholder="New username" required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                        <input type="text" name="firstname" class="form-control"
-                                                                placeholder="New name" required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                        <input type="text" name="lastname" class="form-control"
-                                                                placeholder="New Last Name" required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                        <input type="text" name="email" class="form-control"
-                                                                placeholder="New Email" required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                        <input type="text" name="phone" class="form-control"
-                                                                placeholder="New Phone" required="required" />
-                                                </div>
+<div class="banner">
+        <div class="navbar">
+                <h2>Welcome {{user.firstname}} {{user.lastname}}</h2>
+                <form action="/logout" method="post">
+                        <input type="submit" name="logout" value="Logout" />
+                </form>
+
+        </div>
+        <div class="containter p-4">
+                <div class="row">
+                        <div class="col-sm mx-auto">
+                                <div class="card text-center">
+                                        <div class="card-body custom-card user">
+                                                <img src="/user.png" alt="user-icon"
+                                                        class="card-img-top mx-auto m-2  w-25">
+                                                <h3><b>Profile information</b></h3>
+                                                <h4><b>Username:</b> {{user.username}} <b>Name:</b> {{user.firstname}}
+                                                        {{user.lastname}}</h4>
+                                                <h4><b>Email:</b> {{user.email}} <b>Phone:</b> {{user.phone}}</h4>
                                                 <br />
-                                                <div class="form-group">
-                                                        <button type="submit"
-                                                                class="btn btn-dark btn-success">Update</button>
-                                                </div>
-                                        </form>
-                                        <br />
-                                        <br />
+                                                <h3><b>Update information</b></h3>
+                                                <br />
+                                                <form action="http://localhost:1235/update" method="POST">
+                                                        <div class="form-group">
+                                                                <input type="hidden" value="{{user.id}}" name="id" />
+                                                                <input type="text" name="username" class="form-control"
+                                                                        placeholder="New username"
+                                                                        required="required" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <input type="text" name="firstname" class="form-control"
+                                                                        placeholder="New name" required="required" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <input type="text" name="lastname" class="form-control"
+                                                                        placeholder="New Last Name"
+                                                                        required="required" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <input type="text" name="email" class="form-control"
+                                                                        placeholder="New Email" required="required" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <input type="text" name="phone" class="form-control"
+                                                                        placeholder="New Phone" required="required" />
+                                                        </div>
+                                                        <br />
+                                                        <div class="form-group">
+                                                                <button type="submit"
+                                                                        class="btn btn-dark btn-success">Update</button>
+                                                        </div>
+                                        </div>
                                 </div>
                         </div>
-                </div>
-                <div class="col-sm mx-auto">
-                        <div class="card text-center">
-                                <div class="card-body">
-                                        <img src="https://i.ibb.co/FsbGLqv/Pet-Spot-Icon.png" alt="peticon"
-                                                class="card-img-top mx-auto m-2 rounded-circle w-25">
-                                        <h3>Add a new pet</h3>
-                                        <br />
-                                        <form action="http://localhost:1235/add" method="POST">
-                                                <div class="form-group">
-                                                        <input type="text" name="name" class="form-control"
-                                                                placeholder="Pet Name" required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                        <select name="type_id" class="custom-select custom-select-sm">
-                                                                <option selected>Dog or cat?</option>
-                                                                <option value="1">Dog</option>
-                                                                <option value="2">Cat</option>
-                                                        </select>
-                                                </div>
-                                                <div class="form-group">
-                                                        <select name="breed_id" class="custom-select custom-select-sm">
-                                                                <option selected>Select a breed</option>
-                                                                <option value="2">Bulldog</option>
-                                                                <option value="1">Pitbull</option>
-                                                                <option value="20">Terrier</option>
-                                                                <option value="9">British shorthair</option>
-                                                        </select>
-                                                </div>
-                                                <div class="form-group">
-                                                        <select name="size" class="custom-select custom-select-sm">
-                                                                <option selected>Select a size</option>
-                                                                <option value="Small">Small</option>
-                                                                <option value="Medium">Medium</option>
-                                                                <option value="Big">Big</option>
-                                                        </select>
-                                                </div>
-                                                <div class="form-group">
-                                                        <select name="sex" class="custom-select custom-select-sm">
-                                                                <option selected>Sex</option>
-                                                                <option value="Male">Male</option>
-                                                                <option value="Female">Female</option>
-                                                        </select>
-                                                </div>
-                                                <div class="form-group">
-                                                        <input type="text" name="description" class="form-control"
-                                                                placeholder="Description" required="required" />
-                                                </div>
-                                                <div class="form-group">
-                                                        <input type="text" name="picture" class="form-control"
-                                                                placeholder="Write a link" required="required" />
-                                                </div>
-                                                <input type="hidden" value="1" name="shelter_id" />
-                                                {{!-- <div class="form-group">
+                        <div class="col-sm mx-auto">
+                                <div class="card text-center">
+                                        <div class="card-body custom-card user">
+                                                <img src="/iconpet.png" alt="peticon"
+                                                        class="card-img-top mx-auto m-2 rounded-circle w-25">
+                                                <h3><b>Add a new pet</b></h3>
+                                                <br />
+                                                <form action="http://localhost:1235/add" method="POST">
+                                                        <div class="form-group">
+                                                                <input type="text" name="name" class="form-control"
+                                                                        placeholder="Pet Name" required="required" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <select name="type_id"
+                                                                        class="custom-select custom-select-sm">
+                                                                        <option selected>Dog or cat?</option>
+                                                                        <option value="1">Dog</option>
+                                                                        <option value="2">Cat</option>
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <select name="breed_id"
+                                                                        class="custom-select custom-select-sm">
+                                                                        <option selected>Select a breed</option>
+                                                                        <option value="2">Bulldog</option>
+                                                                        <option value="1">Pitbull</option>
+                                                                        <option value="20">Terrier</option>
+                                                                        <option value="9">British shorthair</option>
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <select name="size"
+                                                                        class="custom-select custom-select-sm">
+                                                                        <option selected>Select a size</option>
+                                                                        <option value="Small">Small</option>
+                                                                        <option value="Medium">Medium</option>
+                                                                        <option value="Big">Big</option>
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <select name="sex"
+                                                                        class="custom-select custom-select-sm">
+                                                                        <option selected>Sex</option>
+                                                                        <option value="Male">Male</option>
+                                                                        <option value="Female">Female</option>
+                                                                </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <input type="text" name="description"
+                                                                        class="form-control" placeholder="Description"
+                                                                        required="required" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <input type="text" name="picture" class="form-control"
+                                                                        placeholder="Write a link"
+                                                                        required="required" />
+                                                        </div>
+                                                        <input type="hidden" value="1" name="shelter_id" />
+                                                        {{!-- <div class="form-group">
                                                         <div class="custom-file">
                                                                 <input type="file" class="custom-file-input"
                                                                         id="customFileLang" lang="es">
@@ -120,14 +118,15 @@
                                                                 </label>
                                                         </div>
                                                 </div> --}}
+                                                        <br />
+                                                        <div class="form-group">
+                                                                <button type="submit"
+                                                                        class="btn btn-dark btn-success">Add!</button>
+                                                        </div>
+                                                </form>
                                                 <br />
-                                                <div class="form-group">
-                                                        <button type="submit"
-                                                                class="btn btn-dark btn-success">Add!</button>
-                                                </div>
-                                        </form>
-                                        <br />
-                                        <br />
+                                                <br />
+                                        </div>
                                 </div>
                         </div>
                 </div>
