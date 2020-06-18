@@ -242,14 +242,6 @@ app.post("/send", (req, res, next) => {
 });
 
 app.post("/ask", urlencodedParser, (req, res) => {
-  // const fname = req.body.firstname
-  // const lname = req.body.lastname
-  // const email = req.body.email
-  // const phonenum = req.body.phone
-  // const addr = req.body.address
-  // const pets = req.body.more_pets
-  // const kids = req.body.have_kids
-  // const msg = req.body.message
 
   const { firstname, lastname, email, phone, address, more_pets, have_kids, message } = req.body;
 
