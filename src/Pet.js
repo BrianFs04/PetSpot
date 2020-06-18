@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "@reach/router";
 import CarouselPics from "./CarouselPics";
-import { Container, Col, Image, Row, Card } from "react-bootstrap";
+import { Container, Col, Image, Row, Card, Button } from "react-bootstrap";
 
-export default function Pet({ name, breed, sex, description, picture }) {
+export default function Pet({ id, name, breed, sex, description, picture }) {
   return (
     <div className="pad_bot">
       <CarouselPics className="pad_bot" />
@@ -23,6 +24,11 @@ export default function Pet({ name, breed, sex, description, picture }) {
                   {breed} | {sex}
                 </Card.Title>
                 <Card.Text>{description}</Card.Text>
+                <Link to={`/askform/${id}`}>
+                  <Button onClick variant="outline-dark">
+                    Adopt me!
+                  </Button>
+                </Link>
               </Card.Body>
             </Card>
             <br />
