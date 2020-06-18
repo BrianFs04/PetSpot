@@ -1,21 +1,19 @@
 import React, { Component, useEffect, useState } from "react";
-import { CardDeck, Form, Dropdown } from "react-bootstrap";
+import { CardDeck, Form } from "react-bootstrap";
 import Pets from "./Pets";
 
 function getUnique(arr, comp) {
   // store the comparison  values in array
   const unique = arr
     .map((e) => e[comp])
-
     // store the indexes of the unique objects
     .map((e, i, final) => final.indexOf(e) === i && i)
-
     // eliminate the false indexes & return unique objects
     .filter((e) => arr[e])
     .map((e) => arr[e]);
-
   return unique;
 }
+
 function BreedsDropDown() {
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([
