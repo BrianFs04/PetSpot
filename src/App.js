@@ -12,6 +12,7 @@ import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
 import { Login } from "./views/auth/login";
 import { Signup } from "./views/auth/signup";
+import Ask from "./ask_form"
 
 console.warn = () => {};
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
+              <Route path="/askform" component={Ask} />
               <Route component={Details} />
               <Route component={NoMatch} />
             </Switch>
