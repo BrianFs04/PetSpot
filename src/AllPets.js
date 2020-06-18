@@ -87,24 +87,26 @@ function BreedsDropDown() {
               key={pets.id}
               id={pets.id}
               name={pets.name}
-              description={pets.description}
               picture={pets.picture}
+              sex={pets.sex}
+              breed={pets.breed_name}
             />
           ))}
         </CardDeck>
       ) : (
-        <CardDeck>
-          {search.map((pets) => (
-            <Pets
-              key={pets.id}
-              id={pets.id}
-              name={pets.name}
-              description={pets.description}
-              picture={pets.picture}
-            />
-          ))}
-        </CardDeck>
-      )}
+          <CardDeck>
+            {search.map((pets) => (
+              <Pets
+                key={pets.id}
+                id={pets.id}
+                name={pets.name}
+                picture={pets.picture}
+                sex={pets.sex}
+                breed={pets.breed_name}
+              />
+            ))}
+          </CardDeck>
+        )}
     </div>
   );
 }

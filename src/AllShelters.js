@@ -3,14 +3,16 @@ import { Card } from "react-bootstrap";
 
 function Shelters({ name, description, picture }) {
   return (
-    <div className="sep_shelters">
-      <Card className="bg-dark text-white">
-        <Card.Img src={picture} alt="Card image" className="img_shelter" />
-        <Card.ImgOverlay>
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-        </Card.ImgOverlay>
-      </Card>
+    <div>
+      <div className="sep_shelters">
+        <Card className="bg-dark text-white">
+          <Card.Img src={picture} alt="Card image" className="img_shelter" />
+          <Card.ImgOverlay>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text>{description}</Card.Text>
+          </Card.ImgOverlay>
+        </Card>
+      </div>
     </div>
   );
 }
@@ -42,7 +44,13 @@ class AllShelters extends Component {
   render() {
     const { shelters } = this.state;
 
-    return <div>{shelters}</div>;
+    return <div>
+      <div>
+        <h2 className="custom_text">What Do Animal Shelters Do?</h2>
+        <p className="homeintro">Animal shelters care for animals needing protection, attempt to find homes for homeless animals, and reunite lost pets with their owners. Some shelters provide other services, such as animal health services, behavioral evaluations, training, and humane education.</p>
+      </div>
+      {shelters}
+    </div>;
   }
 }
 export default AllShelters;

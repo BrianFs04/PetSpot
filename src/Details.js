@@ -37,7 +37,7 @@ class Details extends Component {
   }
   render() {
     const { pet } = this.state;
-    return <div>{!pet ? <NoMatch /> : pet}</div>;
+    return <div>{pet}</div>;
   }
 }
 

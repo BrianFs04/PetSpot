@@ -17,8 +17,9 @@ class LastPets extends Component {
               key={pets.id}
               id={pets.id}
               name={pets.name}
-              description={pets.description}
               picture={pets.picture}
+              sex={pets.sex}
+              breed={pets.breed_name}
             />
           );
         });

@@ -18,7 +18,7 @@ app.use(
   })
 );
 
-var urlencodedParser = bodyParser.urlencoded({extended: false});
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 
 // Mysql
@@ -90,7 +90,7 @@ app.get("/breeds", (req, res) => {
 
 // Last three pets
 app.get("/lastpets", (req, res) => {
-  const sql = "SELECT * FROM pets ORDER BY id DESC LIMIT 3";
+  const sql = "SELECT pets.*, breeds.breed_name FROM pets JOIN breeds ON pets.breed_id = breeds.id ORDER BY pets.id DESC LIMIT 3";
   connection.query(sql, (error, result) => {
     if (error) throw error;
     if (result.length > 0) {

@@ -10,7 +10,7 @@ export default function Pet({ name, breed, sex, description, picture }) {
       <Container className="pad_top">
         <Row>
           <Col xs={12} sm={7} md={6} lg={4}>
-            <Image src={picture} roundedCircle fluid />
+            <Image src={picture} fluid />
           </Col>
           <Col xs={12} sm={7} md={6} lg={8}>
             <Card
