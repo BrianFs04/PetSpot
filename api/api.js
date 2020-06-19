@@ -20,7 +20,6 @@ app.use(
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-
 // Mysql
 const connection = mysql.createPool({
   host: "database-1.c95hyumym0pz.us-east-1.rds.amazonaws.com",
@@ -90,7 +89,8 @@ app.get("/breeds", (req, res) => {
 
 // Last three pets
 app.get("/lastpets", (req, res) => {
-  const sql = "SELECT pets.*, breeds.breed_name FROM pets JOIN breeds ON pets.breed_id = breeds.id ORDER BY pets.id DESC LIMIT 3";
+  const sql =
+    "SELECT pets.*, breeds.breed_name FROM pets JOIN breeds ON pets.breed_id = breeds.id ORDER BY pets.id DESC LIMIT 3";
   connection.query(sql, (error, result) => {
     if (error) throw error;
     if (result.length > 0) {
@@ -242,21 +242,29 @@ app.post("/send", (req, res, next) => {
 });
 
 app.post("/ask", urlencodedParser, (req, res) => {
+  const {
+    firstname,
+    lastname,
+    email,
+    phone,
+    address,
+    more_pets,
+    have_kids,
+    message,
+  } = req.body;
 
-  const { firstname, lastname, email, phone, address, more_pets, have_kids, message } = req.body;
-
-  const sql = `INSERT INTO adopt_applications (user_fname, user_lname, user_email, user_phone, user_address, more_pets, have_kids, message) VALUES ('${firstname}', '${lastname}', '${email}', '${phone}', '${address}', '${more_pets}', '${have_kids}', '${message}');`
+  const sql = `INSERT INTO adopt_applications (user_fname, user_lname, user_email, user_phone, user_address, more_pets, have_kids, message) VALUES ('${firstname}', '${lastname}', '${email}', '${phone}', '${address}', '${more_pets}', '${have_kids}', '${message}');`;
   connection.query(sql, (err, results, fields) => {
     if (err) {
-      console.log("failed to store data")
-      res.sendStatus(500)
-      return
+      console.log("Failed to store data");
+      res.sendStatus(500);
+      return;
     }
-    console.log("adoption form received")
-    res.end()
-  })
-  res.redirect('http://localhost:1234/pets')
-})
+    console.log("Adoption form received");
+    res.end();
+  });
+  res.redirect("http://localhost:1234/pets");
+});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 

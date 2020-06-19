@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { NoMatch } from "./NoMatch";
 import Pet from "./Pet";
 
 const url = window.location.href;

@@ -62,7 +62,9 @@ function BreedsDropDown() {
     <div>
       <Form className="pad_bot">
         <Form.Group controlId="exampleForm.SelectCustom">
-          <Form.Label column="lg">Select a breed</Form.Label>
+          <Form.Label column="lg" className="filter_text">
+            Select a breed
+          </Form.Label>
           <Form.Control
             as="select"
             custom="true"
@@ -94,19 +96,19 @@ function BreedsDropDown() {
           ))}
         </CardDeck>
       ) : (
-          <CardDeck>
-            {search.map((pets) => (
-              <Pets
-                key={pets.id}
-                id={pets.id}
-                name={pets.name}
-                picture={pets.picture}
-                sex={pets.sex}
-                breed={pets.breed_name}
-              />
-            ))}
-          </CardDeck>
-        )}
+        <CardDeck>
+          {search.map((pets) => (
+            <Pets
+              key={pets.id}
+              id={pets.id}
+              name={pets.name}
+              picture={pets.picture}
+              sex={pets.sex}
+              breed={pets.breed_name}
+            />
+          ))}
+        </CardDeck>
+      )}
     </div>
   );
 }

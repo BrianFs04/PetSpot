@@ -8,3 +8,11 @@
   line-height: 80px;
   color: #10b2e7;
 }
+
+.filter_text {
+  text-align: left;
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  color: #3a2f5e;
+}
