@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "@reach/router";
-import CarouselPics from "./CarouselPics";
 import { Container, Col, Image, Row, Card, Button } from "react-bootstrap";
 
 export default function Pet({ name, breed, sex, description, picture }) {
   return (
     <div className="pad_bot">
-      <CarouselPics className="pad_bot" />
       <Container className="pad_top">
         <Row>
           <Col xs={12} sm={7} md={6} lg={4}>

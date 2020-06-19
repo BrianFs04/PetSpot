@@ -138,6 +138,22 @@ a:hover,
   padding-top: 35px;
 }
 
+.same_size{
+  height: 650px;
+}
+
+.padding_cards{
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.padding_tops{
+  padding-top: 40px;
+}
+
+
 #root {
   margin-top: -10px;
 }
+
+
