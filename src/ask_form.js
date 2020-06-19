@@ -2,8 +2,8 @@ import React from "react";
 //import { Col, Row, Card, Button } from "react-bootstrap";
 //import Form from "react-bootstrap/Form";
 
-export default function Ask(){
-  return(
+export default function Ask() {
+  return (
     <form method="POST" action="http://localhost:1235/ask">
       <div class="card text-center bg-secondary text-white">
         <h5 class="card-header">Adoption Form</h5>
@@ -22,7 +22,7 @@ export default function Ask(){
         <div className="form-row">
           <div class="form-group col-md-6">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" required="required"/>
+            <input type="email" class="form-control" name="email" required="required" />
           </div>
           <div class="form-group col-md-6">
             <label for="phone">Phone (optional)</label>
@@ -52,7 +52,7 @@ export default function Ask(){
             <textarea class="form-control" name="message" placeholder="Ask us anything" rows="3"></textarea>
           </div>
         </div>
-        <button type="submit" class="btn btn-secondary">Submit</button>
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
       </div>
     </form>
   )
