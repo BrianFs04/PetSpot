@@ -22,7 +22,7 @@ export default function Pet({ name, breed, sex, description, picture }) {
                   {breed} | {sex}
                 </Card.Title>
                 <Card.Text>{description}</Card.Text>
-                <Link to={`/askform`}>
+                <Link to={`/askform/${name}`}>
                   <Button onClick variant="outline-dark">
                     Adopt me!
                   </Button>
