@@ -241,6 +241,8 @@ app.post("/send", (req, res, next) => {
   });
 });
 
+
+//store adoption form information in the database
 app.post("/ask", urlencodedParser, (req, res) => {
   const {
     firstname,

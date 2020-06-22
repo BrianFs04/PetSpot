@@ -1,5 +1,6 @@
 import React from "react";
 
+//will get the pets name on the url
 const url = window.location.href;
 const urlSp = url.split("/");
 let name;
@@ -9,6 +10,7 @@ if (urlSp.length === 5) {
   name = 0;
 }
 
+//function that will display de adoption form by pet name
 export default function Ask() {
   return (
     <form method="POST" action="http://localhost:1235/ask">
