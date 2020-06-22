@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "@reach/router";
 import { Container, Col, Image, Row, Card, Button } from "react-bootstrap";
 
+/* The Pet function will allow us to print the view for what it got from the Details class
+printing like so the full details of every single pet in our API */
 export default function Pet({ name, breed, sex, description, picture }) {
   return (
     <div className="pad_bot">
