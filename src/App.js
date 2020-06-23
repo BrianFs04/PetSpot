@@ -12,9 +12,8 @@ import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
 import { Login } from "./views/auth/login";
 import { Signup } from "./views/auth/signup";
-import Ask from "./ask_form"
+import Ask from "./ask_form";
 
-console.warn = () => {};
 //route management for app components
 class App extends Component {
   render() {
@@ -39,7 +38,7 @@ class App extends Component {
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
               <Route path="/askform" component={Ask} />
-              <Route component={Details} />
+              <Route path="/pet" component={Details} />
               <Route component={NoMatch} />
             </Switch>
           </Layout>
@@ -49,4 +48,5 @@ class App extends Component {
   }
 }
 
+// Renders the above class inside the div which has the id root in index.html
 render(<App />, document.getElementById("root"));
