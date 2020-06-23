@@ -2,7 +2,7 @@
 # PetSpot
 
 PetSpot is a web application dedicated to making easy the process of pet adoption, our mission is to connect users and shelters easily and simply.
-![](https://i.ibb.co/HrDXBfd/pantalla.png)
+![](https://i.ibb.co/BtwtKXr/pantalla.png)
 ### Introduction
 This project was developed as part of the final projects of the foundation stage at Holberton School. 
 Currently the problem of animal abandonment is very large, as approximately 6.5 million animals are abandoned, approximately 3.3 are dogs and 3.2 are cats. This problem has social and economic, health and environmental consequences. Since street pets can attack humans, they can feed on wildlife among other things.
