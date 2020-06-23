@@ -33,7 +33,7 @@ router.get('/signin', isNotLoggedIn, (req, res) => {
 router.post('/signin', isNotLoggedIn, (req, res, next) => {
         passport.authenticate('local.signin', {
                 successRedirect: '/profile',
-                failureRedirect: 'http://18.234.169.114/login'
+                failureRedirect: 'http://localhost:1234/login'
         })(req, res, next);
 });
 
@@ -45,7 +45,7 @@ router.get('/profile', isLoggedIn, (req, res) => {
 //Route to delete the current user session
 router.post('/logout', isLoggedIn, (req, res) => {
         req.logOut();
-        res.redirect('http://18.234.169.114/');
+        res.redirect('http://localhost:1234/login');
 });
 
 module.exports = router;
