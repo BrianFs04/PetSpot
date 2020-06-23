@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class Contact extends Component {
+  //This class takes data from the contact form and send it to
+  //the endopoint send
   handleSubmit(e) {
     e.preventDefault();
     const name = document.getElementById("name").value;
@@ -27,10 +29,12 @@ class Contact extends Component {
   }
 
   resetForm() {
+    //This clean up the form then the data was send to email
     document.getElementById("contact-form").reset();
   }
 
   render() {
+    //This is the boostrap form structure
     return (
       <div className="message">
         <div className="cat_message">
