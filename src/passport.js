@@ -3,7 +3,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const pool = require('./database');
 const helpers = require('./helpers');
 
-
+//Local passport method to authenticate a user
 passport.use('local.signin', new LocalStrategy({
         usernameField: 'username',
         passwordField: 'password',
@@ -24,9 +24,7 @@ passport.use('local.signin', new LocalStrategy({
         }
 }));
 
-
-
-
+//Local passport method to create a new user in the DB
 passport.use('local.signup', new LocalStrategy({
         usernameField: 'username',
         passwordField: 'password',
@@ -46,10 +44,12 @@ passport.use('local.signup', new LocalStrategy({
         return done(null, newUser);
 }));
 
+// Passport method to serialize a user
 passport.serializeUser((usr, done) => {
         done(null, usr.id);
 });
 
+// Passport method to desserialize a user
 passport.deserializeUser(async (id, done) => {
         const rows = await pool.query('SELECT * FROM users WHERE id= ?', [id]);
         done(null, rows[0]);

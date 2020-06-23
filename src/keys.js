@@ -1,3 +1,4 @@
+//Keys to connect to the database
 module.exports = {
         database: {
                 host: "database-1.c95hyumym0pz.us-east-1.rds.amazonaws.com",
