@@ -15,6 +15,7 @@ import { Signup } from "./views/auth/signup";
 import Ask from "./ask_form"
 
 console.warn = () => {};
+//route management for app components
 class App extends Component {
   render() {
     return (
