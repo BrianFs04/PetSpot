@@ -1,5 +1,6 @@
 import React from "react";
 
+//Login form
 export const Login = () => (
   <div className="login_img">
     <div className="login-form">
