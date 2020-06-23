@@ -1,5 +1,6 @@
 import React from "react";
 
+// It prints 404 page
 export const NoMatch = () => (
   <div>
     <div className="numberleft"></div>

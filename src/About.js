@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Container, Image } from "react-bootstrap";
 
+// Displays the section about
 export const About = () => (
   <Container>
     <Row className="pad_bot">
