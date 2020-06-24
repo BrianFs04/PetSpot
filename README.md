@@ -4,7 +4,7 @@
 PetSpot is a web application dedicated to making easy the process of pet adoption, our mission is to connect users and shelters easily and simply.
 ![](https://i.ibb.co/BtwtKXr/pantalla.png)
 ### Introduction
-This project was developed as part of the final projects of the foundation stage at Holberton School. 
+This project was developed as part of the final project of the foundation stage at Holberton School. 
 Currently the problem of animal abandonment is very large, as approximately 6.5 million animals are abandoned, approximately 3.3 are dogs and 3.2 are cats. This problem has social and economic, health and environmental consequences. Since street pets can attack humans, they can feed on wildlife among other things.
 
 Therefore, a website is proposed, which serves as a showcase, where street animals can be posted so that they can be adopted by a home where they are treated with love.
@@ -13,10 +13,11 @@ You can access the website at the following link
 [PetSpot]( http://18.234.169.114/)
 
 Authors
-* Felipe Londoño [LinkedIn](https://www.linkedin.com/in/felipe-londo%C3%B1o-07246a192/) [GitHub]( https://github.com/felipemontes) [Blog](https://www.linkedin.com/in/felipe-londo%C3%B1o-07246a192/) 
-* Brayan Florez [LinkedIn]( https://www.linkedin.com/in/brian-florez-1a9ab2197/) [GitHub]( https://github.com/BrianFs04)
-* Pilar Pinto [LinkedIn]( https://www.linkedin.com/in/pilarpinto/) [GitHub]( https://github.com/PilarPinto)
-* Fabio Gomez [LinkedIn]( https://www.linkedin.com/in/fabiogomezs/) [GitHub]( https://github.com/fabio-gz)
+* Felipe Londoño [LinkedIn](https://www.linkedin.com/in/felipe-londo%C3%B1o-07246a192/) [GitHub]( https://github.com/felipemontes) [Blog about this project](https://medium.com/@felipe.londono.montes/my-experience-in-the-develop-of-petspot-c4c8136aabe4) 
+* Brayan Florez [LinkedIn]( https://www.linkedin.com/in/brian-florez-1a9ab2197/) [GitHub]( https://github.com/BrianFs04) [Blog about this project](https://medium.com/@1197/changing-pets-lives-with-a-simple-click-a5faf76914e3)
+* Pilar Pinto [LinkedIn]( https://www.linkedin.com/in/pilarpinto/) [GitHub]( https://github.com/PilarPinto) [Blog about this project]
+(https://medium.com/@pilypint95/a-grain-of-sand-45a1c9fccbba)
+* Fabio Gomez [LinkedIn]( https://www.linkedin.com/in/fabiogomezs/) [GitHub]( https://github.com/fabio-gz) [Blog about this project](https://medium.com/@fabiogomez.silva/petspot-portfolio-project-1fd5ee313ad8)
 
 
 
@@ -34,10 +35,16 @@ $ npm install
 $ npm run dev
 ```
 
-In another terminal...
+In another terminal
 
 ```sh
 $ npm run api
+```
+
+In another one
+
+```sh
+$ npm run lapi
 ```
 ### Contributing
 When contributing to this repository, please first discuss the change you wish to make via issue,
