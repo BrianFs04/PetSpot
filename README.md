@@ -7,6 +7,9 @@ PetSpot is a web application dedicated to making easy the process of pet adoptio
 This project was developed as part of the final project of the foundation stage at Holberton School. 
 Currently the problem of animal abandonment is very large, as approximately 6.5 million animals are abandoned, approximately 3.3 are dogs and 3.2 are cats. This problem has social and economic, health and environmental consequences. Since street pets can attack humans, they can feed on wildlife among other things.
 
+[<img src="https://img.youtube.com/vi/Uwp0iblSxgM/maxresdefault.jpg" width="50%">](https://youtu.be/Uwp0iblSxgM)
+
+
 Therefore, a website is proposed, which serves as a showcase, where street animals can be posted so that they can be adopted by a home where they are treated with love.
 
 You can access the website at the following link
