@@ -13,11 +13,10 @@ You can access the website at the following link
 [PetSpot]( http://18.234.169.114/)
 
 Authors
-* Felipe Londoño [LinkedIn](https://www.linkedin.com/in/felipe-londo%C3%B1o-07246a192/) [GitHub]( https://github.com/felipemontes) [Blog about this project](https://medium.com/@felipe.londono.montes/my-experience-in-the-develop-of-petspot-c4c8136aabe4) 
-* Brayan Florez [LinkedIn]( https://www.linkedin.com/in/brian-florez-1a9ab2197/) [GitHub]( https://github.com/BrianFs04) [Blog about this project](https://medium.com/@1197/changing-pets-lives-with-a-simple-click-a5faf76914e3)
-* Pilar Pinto [LinkedIn]( https://www.linkedin.com/in/pilarpinto/) [GitHub]( https://github.com/PilarPinto) [Blog about this project]
-(https://medium.com/@pilypint95/a-grain-of-sand-45a1c9fccbba)
-* Fabio Gomez [LinkedIn]( https://www.linkedin.com/in/fabiogomezs/) [GitHub]( https://github.com/fabio-gz) [Blog about this project](https://medium.com/@fabiogomez.silva/petspot-portfolio-project-1fd5ee313ad8)
+* Felipe Londoño [LinkedIn](https://www.linkedin.com/in/felipe-londo%C3%B1o-07246a192/)  -  [GitHub]( https://github.com/felipemontes)  -  [Blog about this project](https://medium.com/@felipe.londono.montes/my-experience-in-the-develop-of-petspot-c4c8136aabe4) 
+* Brayan Florez [LinkedIn]( https://www.linkedin.com/in/brian-florez-1a9ab2197/)  -  [GitHub]( https://github.com/BrianFs04)  -  [Blog about this project](https://medium.com/@1197/changing-pets-lives-with-a-simple-click-a5faf76914e3)
+* Pilar Pinto [LinkedIn]( https://www.linkedin.com/in/pilarpinto/)  -  [GitHub]( https://github.com/PilarPinto) -  [Blog about this project](https://medium.com/@pilypint95/a-grain-of-sand-45a1c9fccbba)
+* Fabio Gomez [LinkedIn]( https://www.linkedin.com/in/fabiogomezs/)  -  [GitHub]( https://github.com/fabio-gz)  -  [Blog about this project](https://medium.com/@fabiogomez.silva/petspot-portfolio-project-1fd5ee313ad8)
 
 
 
